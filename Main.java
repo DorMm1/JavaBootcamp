@@ -8,9 +8,9 @@ import java.util.Scanner;
 import static java.lang.Integer.MAX_VALUE;
 
 public class Main {
-    public static boolean counting = true;
     public static void main(String[] args) {
-        /*GameMap gm = new GameMap();
+        // EX 1:
+        GameMap gm = new GameMap();
         Player gamer = new Player(gm);
         Scanner scanner = new Scanner(System.in);
         char key;
@@ -20,8 +20,8 @@ public class Main {
             System.out.println("Insert a key to play:");
             key = scanner.nextLine().charAt(0);
             gamer.play(key);
-        }*/
-/*        Random rnd = new Random();
+        //EX 2:
+       Random rnd = new Random();
         String[] listOfWords = {"java","jjava","vaj","aavj","j","vjaa","dan","and","ddan"};
         int[][] count = new int[listOfWords.length][2];
         for(int i=0;i<listOfWords.length;i++){
@@ -46,20 +46,8 @@ public class Main {
                 System.out.println("The word "+listOfWords[i]+" repeats "+
                         (count[i][1])+" times");
             }
-        }*/
-
-        System.out.println("Press enter to stop counting");
-        Thread counter = new Thread(new ThreadCountFile());
-//        Thread stopper = new Thread(new ThreadStopCountFile()); // tried adding a stopper thread but not working
-        counter.start();
-//        stopper.start();
-        try {
-            Thread.sleep(MAX_VALUE);
-            if(!counting) // counting is a static boolean var on the Main class
-                Thread.currentThread().interrupt();
-        } catch (InterruptedException e) {
-            System.out.println("Counting finished, we reached:" + ThreadCountFile.count);
         }
-    }
+
+
 
 }
